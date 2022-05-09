@@ -20,14 +20,15 @@ _Request Parameters_
 | username (must) | _string_ | Account of CoTX Device app |
 | password (must) | _string_ | md5(password) |
 
-Sample request：
+_Sample request_
 ```
 {
     "username": test@cotxnetworks.com,
     "password": "E10ADC3949BA59ABBE56E057F20F883E"
 }
 ```
-Responses：
+_Responses_
+
 200: OK
 
 ```json
