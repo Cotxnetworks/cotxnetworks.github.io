@@ -2,10 +2,6 @@
 
 ## Introduction
 
-Method|Url|Describe
-| :-----: | :---: | :---: |
-POST   |/cotx/v1.0/order/add     |<a href="#1">创建订单V1.0</a>
-GET    |/cotx/v1.0/order/get     |<a href="#2">获取订单信息V1.0</a>
 
 ## Accounts
 
