@@ -1,16 +1,19 @@
 # COTX APIs
 
 ## Introduction
+The COTX iot cloud service API is a set of HTTP Request that allows you to programatically interact with iot cloud service . It's the lowest level building block and is ideal for integrating with back-end services, for example.
 
+When you register the device through the COTX Device App, you can use your username and password to get a key, and then subscribe to the device data through MQTT to make your own application.
 
-## Accounts
+## Base URL
+https://api.cotx-sg.io/
 
----
+## Account
 
-## Account MQTT connection key
+### Account MQTT connection key
 
 ```
-POST https://api.cotx-sg.io/v1/accounts
+POST https://api.cotx-sg.io/api/v1/secret
 ```
 
 _Request Parameters_
@@ -39,6 +42,9 @@ _Responses_
 
 
 ## Subscription data
+Take the MQTT tool as an example
+![image](https://user-images.githubusercontent.com/76096088/167827968-a4f11e10-3499-4c7c-a4ee-4e76423a63ce.png)
+
 
 _Responses_
 
@@ -46,27 +52,21 @@ _Responses_
 {
  "sn": "SN9012PLPL06AF4C",
  "dev_eui": "1122334455667788",
- "epo_status": 0,
- "position_mark": 2,
- "upload_tag": 0,
- "is_charge": 0,
- "connect": 1,
- "longitude": 0,
- "latitude": 0,
- "precious": 0,
- "star_num": 0,
- "timestamp": 1652091432,
- "walking": 0,
- "power": 67,
- "working": 0,
- "mac": "4caf06faee02",
- "msg_id": 19,
- "msg_type": 177,
- "relay_rssi": 0,
- "relay_expect": 0,
- "relsy_actual": 0,
- "time_zone": 0,
- "last _position_time": 1652091432
+ "epo_status": 0,      //EPOstatus  0-invalid/overdue 1-available
+ "position_mark": 2,   // 定位标记 0-无定位 1-设备 2-手机 3-wifi
+ "upload_tag": 0,      // 上传状态 0-实时 1-补传
+ "is_charge": 0,       // 充电状态 0-未充电 1-充电
+ "connect": 1,         // 连接方式 0:Lora 1:BLE 2:WiFi
+ "longitude": 0,       // 经度 floor(double longitude * 1000000)
+ "latitude": 0,        // 纬度 floor(double latitude * 1000000)
+ "precious": 0,        // 定位精度  0~2047
+ "star_num": 0,        // 定位卫星数  0~37
+ "timestamp": 1652091432,// 定位时间 UTC时间戳
+ "walking": 0,         // 信号强度 0~-255
+ "power": 67,          // 步数 0~16,777,215
+ "working": 0,         // 运动时间(min) 0~1440
+ "mac": "4caf06faee02",  // 连接WiFi MAC地址
+ "last _position_time": 1652091432 // 上一次定位时间
 }
 ```
 
