@@ -1,37 +1,73 @@
-## Welcome to GitHub Pages
+# COTX APIs
 
-You can use the [editor on GitHub](https://github.com/Cotxnetworks/cotxnetworks.github.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+## Introduction
+The COTX iot cloud service API is a set of HTTP Request that allows you to programatically interact with iot cloud service . It's the lowest level building block and is ideal for integrating with back-end services, for example.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+When you register the device through the COTX Device App, you can use your username and password to get a key, and then subscribe to the device data through MQTT to make your own application.
 
-### Markdown
+## Base URL
+https://api.cotx-sg.io/
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## Account
 
-```markdown
-Syntax highlighted code block
+### Account MQTT connection key
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```
+POST https://api.cotx-sg.io/api/v1/secret
 ```
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+_Request Parameters_
 
-### Jekyll Themes
+| param             | Type     | Note                                     |
+| ----------------- | -------- | ---------------------------------------- |
+| username (must) | _string_ | Account of CoTX Device app |
+| password (must) | _string_ | md5(password) |
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Cotxnetworks/cotxnetworks.github.io/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+_Sample request_
+```
+{
+    "username": test@cotxnetworks.com,
+    "password": "E10ADC3949BA59ABBE56E057F20F883E"
+}
+```
+_Responses_
 
-### Support or Contact
+200: OK
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+```json
+{
+  "mqtt": "0e6d0590-4557-4c2a-b0ba-b10c645fd9e6"
+}
+```
+
+
+## Subscription data
+Take the MQTT tool as an example
+![image](https://user-images.githubusercontent.com/76096088/167827968-a4f11e10-3499-4c7c-a4ee-4e76423a63ce.png)
+
+
+_Responses_
+
+```json
+{
+ "sn": "SN9012PLPL06AF4C",
+ "dev_eui": "1122334455667788",
+ "epo_status": 0,      //EPOstatus  0-invalid/overdue 1-available
+ "position_mark": 2,   // 定位标记 0-无定位 1-设备 2-手机 3-wifi
+ "upload_tag": 0,      // 上传状态 0-实时 1-补传
+ "is_charge": 0,       // 充电状态 0-未充电 1-充电
+ "connect": 1,         // 连接方式 0:Lora 1:BLE 2:WiFi
+ "longitude": 0,       // 经度 floor(double longitude * 1000000)
+ "latitude": 0,        // 纬度 floor(double latitude * 1000000)
+ "precious": 0,        // 定位精度  0~2047
+ "star_num": 0,        // 定位卫星数  0~37
+ "timestamp": 1652091432,// 定位时间 UTC时间戳
+ "walking": 0,         // 信号强度 0~-255
+ "power": 67,          // 步数 0~16,777,215
+ "working": 0,         // 运动时间(min) 0~1440
+ "mac": "4caf06faee02",  // 连接WiFi MAC地址
+ "last _position_time": 1652091432 // 上一次定位时间
+}
+```
+
+---
