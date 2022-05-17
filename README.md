@@ -26,7 +26,7 @@ _Request Parameters_
 _Sample request_
 ```
 {
-    "username": test@cotxnetworks.com,
+    "username": "test@cotxnetworks.com",
     "password": "E10ADC3949BA59ABBE56E057F20F883E"
 }
 ```
@@ -36,7 +36,7 @@ _Responses_
 
 ```json
 {
-  "mqtt": "0e6d0590-4557-4c2a-b0ba-b10c645fd9e6"
+  "secret": "0e6d0590-4557-4c2a-b0ba-b10c645fd9e6"
 }
 ```
 
