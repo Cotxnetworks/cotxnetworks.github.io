@@ -52,7 +52,7 @@ _Responses_
 {
  "sn": "SN9012PLPL06AF4C",
  "dev_eui": "1122334455667788",
- "epo_status": 0,      //EPOstatus  0-invalid/overdue 1-available
+ "epo_status": 0,      // EPOstatus  0-invalid/overdue 1-available
  "position_mark": 2,   // 定位标记 0-无定位 1-设备 2-手机 3-wifi
  "upload_tag": 0,      // 上传状态 0-实时 1-补传
  "is_charge": 0,       // 充电状态 0-未充电 1-充电
@@ -62,11 +62,11 @@ _Responses_
  "precious": 0,        // 定位精度  0~2047
  "star_num": 0,        // 定位卫星数  0~37
  "timestamp": 1652091432,// 定位时间 UTC时间戳
- "walking": 0,         // 信号强度 0~-255
- "power": 67,          // 步数 0~16,777,215
- "working": 0,         // 运动时间(min) 0~1440
+ "walking": 0,           // 信号强度 0~-255
+ "power": 67,            // 步数 0~16,777,215
+ "working": 0,           // 运动时间(min) 0~1440
  "mac": "4caf06faee02",  // 连接WiFi MAC地址
- "last _position_time": 1652091432 // 上一次定位时间
+ "last _position_time": 1652091432 // 上一次定位时间 UTC时间戳
 }
 ```
 
