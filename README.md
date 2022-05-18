@@ -66,6 +66,7 @@ _Responses_
  "power": 67,            // 步数 0~16,777,215
  "working": 0,           // 运动时间(min) 0~1440
  "mac": "4caf06faee02",  // 连接WiFi MAC地址
+  "helium_report_interval":5,      // 设备上报数据间隔 单位分钟
  "last _position_time": 1652091432 // 上一次定位时间 UTC时间戳
 }
 ```
