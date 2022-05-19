@@ -66,7 +66,7 @@ _Responses_
  "walking": 0,           // 运动时间(min) 0~1440
  "power": 67,            // 电量 0~100 
  "working": 0,           // 运动时间(min) 0~1440
- "assist_mac":[          /// wifi辅助定位数据 4组mac 通过辅助定位可以拿到经纬度 https://developers.google.com/maps/documentation/geolocation/overview
+ "assist_mac":[          /// wifi辅助定位数据, 4组mac.通过辅助定位可以获取经纬度 https://developers.google.com/maps/documentation/geolocation/overview
      {
      "mac":"43:AE:82:F5:8A:FB",
      "rssi":-1
