@@ -64,6 +64,7 @@ _uplink Responses_
  "data_type":"uplink",
  "sn": "SN9012PLPL06AF4C",
  "dev_eui": "1122334455667788",
+ "rssi":-18,           // rssi -128~0
  "epo_status": 0,      // EPOstatus  0-invalid/overdue 1-available
  "position_mark": 2,   // 定位标记 0-无定位 1-设备 2-手机 3-wifi
  "upload_tag": 0,      // 上传状态 0-实时 1-补传
