@@ -13,7 +13,8 @@ https://api.cotx-sg.io/
 ### Account MQTT connection key
 
 ```
-POST https://api.cotx-sg.io/api/v1/secret
+POST https://api.cotx-sg.io/api/v1/get_mqtt_key
+Content-Type:application/json;
 ```
 
 _Request Parameters_
@@ -46,10 +47,21 @@ Take the MQTT tool as an example
 ![image](https://user-images.githubusercontent.com/76096088/167827968-a4f11e10-3499-4c7c-a4ee-4e76423a63ce.png)
 
 
-_Responses_
-
+_join Responses_
 ```json
 {
+ "data_type":"join",
+ "sn": "SN9012PLPL06AF4C",
+ "dev_eui": "1122334455667788",
+ "rssi":-18,
+ "timestamp": 1652091432 //UTC时间戳 
+ }
+```
+
+_uplink Responses_
+```json
+{
+ "data_type":"uplink",
  "sn": "SN9012PLPL06AF4C",
  "dev_eui": "1122334455667788",
  "epo_status": 0,      // EPOstatus  0-invalid/overdue 1-available
