@@ -64,22 +64,22 @@ _uplink Responses_
  "data_type":"uplink",          // 数据类型 只有两种情况：join/uplink
  "sn": "SN9012PLPL06AF4C",      // 出厂SN
  "dev_eui": "1122334455667788", //DevEui
- "rssi":-18,           // RSSI 
- "epo_status": 0,      // EPOstatus  0-invalid/overdue 1-available
- "position_mark": 2,   // 定位标记 0-无定位 1-设备 2-手机 3-wifi
- "upload_tag": 0,      // 上传状态 0-实时 1-补传
- "is_charge": 0,       // 充电状态 0-未充电 1-充电
- "connect": 1,         // 连接方式 0:Lora 1:BLE 2:WiFi
- "longitude": 0,       // 经度 (double longitude * 1000000)
- "latitude": 0,        // 纬度 (double latitude * 1000000)
- "precious": 0,        // 定位精度  0~2047
- "star_num": 0,        // 定位卫星数  0~37
- "timestamp": 1652091432,// 定位时间 UTC时间戳 单位秒
- "paws":11,              // 步数
- "walking": 0,           // 运动时间(min) 0~1440
- "power": 67,            // 电量 0~100 
- "working": 0,           // 运动时间(min) 0~1440
- "assist_mac":[          /// wifi辅助定位数据, 4组mac.通过辅助定位可以获取经纬度 https://developers.google.com/maps/documentation/geolocation/overview
+ "rssi":-18,                    // RSSI 
+ "epo_status": 0,               // EPOstatus  0-invalid/overdue 1-available
+ "position_mark": 2,            // 定位标记 0-无定位 1-设备 2-手机 3-wifi
+ "upload_tag": 0,               // 上传状态 0-实时 1-补传
+ "is_charge": 0,                // 充电状态 0-未充电 1-充电
+ "connect": 1,                  // 连接方式 0:Lora 1:BLE 2:WiFi
+ "longitude": 0,                // 经度 (double longitude * 1000000)
+ "latitude": 0,                 // 纬度 (double latitude * 1000000)
+ "precious": 0,                 // 定位精度  0~2047
+ "star_num": 0,                 // 定位卫星数  0~37
+ "timestamp": 1652091432,       // 定位时间 UTC时间戳 单位秒
+ "paws":11,                     // 步数
+ "walking": 0,                  // 运动时间(min) 0~1440
+ "power": 67,                   // 电量 0~100 
+ "working": 0,                  // 运动时间(min) 0~1440
+ "assist_mac":[                 // wifi辅助定位数据, 4组mac.通过辅助定位可以获取经纬度 https://developers.google.com/maps/documentation/geolocation/overview
      {
      "mac":"43:AE:82:F5:8A:FB",
      "rssi":-1
@@ -97,9 +97,8 @@ _uplink Responses_
      "rssi":-1
      }
  ]         
- 
  "helium_report_interval":5,       // 设备上报数据间隔5~600 单位分钟
- "last_position_time": 1652091432 // 上一次定位时间 UTC时间戳 单位秒
+ "last_position_time": 1652091432  // 上一次定位时间 UTC时间戳 单位秒
 }
 ```
 
