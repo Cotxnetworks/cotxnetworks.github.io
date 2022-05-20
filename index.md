@@ -28,7 +28,7 @@ _Sample request_
 ```
 {
     "username": "test@cotxnetworks.com",
-    "password": "E10ADC3949BA59ABBE56E057F20F883E"
+    "password": "92279f433cba733464fa816a40b2f031"
 }
 ```
 _Responses_
@@ -37,7 +37,7 @@ _Responses_
 
 ```json
 {
-  "secret": "0e6d0590-4557-4c2a-b0ba-b10c645fd9e6"
+  "secret": "f0051e56-9c94-4d4d-8c22-e69cedcbcbdc"
 }
 ```
 
