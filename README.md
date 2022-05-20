@@ -28,7 +28,7 @@ _Sample request_
 ```
 {
     "username": "test@cotxnetworks.com",
-    "password": "E10ADC3949BA59ABBE56E057F20F883E"
+    "password": "92279f433cba733464fa816a40b2f031"
 }
 ```
 _Responses_
