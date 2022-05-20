@@ -44,7 +44,7 @@ _Responses_
 
 ## Subscription data
 Take the MQTT tool as an example
-Topic: `{{username}}/{{dev_eui}}/rx`
+Topic format: username/dev_eui/rx
 
 example: test@cotxnetworks.com/1122334455667788/rx
 
