@@ -47,7 +47,7 @@ _Responses_
 
 Take the MQTT tool as an example
 
-Subscribe Topic: {{username}}/{{dev_eui}}/uplink , Only subscription is allowed and message publishing is not allowed!
+Subscribe Topic: {username}/{dev_eui}/uplink , Only subscription is allowed and message publishing is not allowed!
 
 example:test@cotxnetworks.com/1122334455667788/uplink
 
