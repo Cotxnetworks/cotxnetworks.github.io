@@ -13,7 +13,8 @@ https://api.cotx-sg.io/
 ### Account MQTT connection key
 
 ```
-POST https://api.cotx-sg.io/api/v1/secret
+POST https://api.cotx-sg.io/api/v1/get_mqtt_key
+Content-Type:application/json;
 ```
 
 _Request Parameters_
@@ -26,7 +27,7 @@ _Request Parameters_
 _Sample request_
 ```
 {
-    "username": test@cotxnetworks.com,
+    "username": "test@cotxnetworks.com",
     "password": "E10ADC3949BA59ABBE56E057F20F883E"
 }
 ```
@@ -36,7 +37,7 @@ _Responses_
 
 ```json
 {
-  "mqtt": "0e6d0590-4557-4c2a-b0ba-b10c645fd9e6"
+  "secret": "0e6d0590-4557-4c2a-b0ba-b10c645fd9e6"
 }
 ```
 
@@ -46,27 +47,58 @@ Take the MQTT tool as an example
 ![image](https://user-images.githubusercontent.com/76096088/167827968-a4f11e10-3499-4c7c-a4ee-4e76423a63ce.png)
 
 
-_Responses_
-
+_join Responses_
 ```json
 {
- "sn": "SN9012PLPL06AF4C",
- "dev_eui": "1122334455667788",
- "epo_status": 0,      //EPOstatus  0-invalid/overdue 1-available
- "position_mark": 2,   // 定位标记 0-无定位 1-设备 2-手机 3-wifi
- "upload_tag": 0,      // 上传状态 0-实时 1-补传
- "is_charge": 0,       // 充电状态 0-未充电 1-充电
- "connect": 1,         // 连接方式 0:Lora 1:BLE 2:WiFi
- "longitude": 0,       // 经度 floor(double longitude * 1000000)
- "latitude": 0,        // 纬度 floor(double latitude * 1000000)
- "precious": 0,        // 定位精度  0~2047
- "star_num": 0,        // 定位卫星数  0~37
- "timestamp": 1652091432,// 定位时间 UTC时间戳
- "walking": 0,         // 信号强度 0~-255
- "power": 67,          // 步数 0~16,777,215
- "working": 0,         // 运动时间(min) 0~1440
- "mac": "4caf06faee02",  // 连接WiFi MAC地址
- "last _position_time": 1652091432 // 上一次定位时间
+ "data_type":"join",            // Data type Only two cases: join/uplink
+ "sn": "SN9012PLPL06AF4C",      // SN
+ "dev_eui": "1122334455667788", // DevEui
+ "rssi":-18,                    // RSSI
+ "timestamp": 1652091432        // timestamp UTC
+ }
+```
+
+_uplink Responses_
+```json
+{
+ "data_type":"uplink",          // Data type Only two cases: join/uplink
+ "sn": "SN9012PLPL06AF4C",      // SN
+ "dev_eui": "1122334455667788", // DevEui
+ "rssi":-18,                    // RSSI 
+ "epo_status": 0,               // EPOstatus  0-invalid/overdue 1-available
+ "position_mark": 2,            // position mark 0-no-location 1-device 2-phone 3-wifi
+ "upload_tag": 0,               // upload status 0-realtime 1-complementary
+ "is_charge": 0,                // charge status 0-not charged 1-charge
+ "connect": 1,                  // connection method 0-Lora 1-BLE 2-WiFi
+ "longitude": 0,                // longitude (double longitude * 1000000)
+ "latitude": 0,                 // latitude (double latitude * 1000000)
+ "precious": 0,                 // position accuracy 0~2047
+ "star_num": 0,                 // number of satellites 0~37
+ "timestamp": 1652091432,       // Positioning time UTC timestamp
+ "paws":11,                     // number of steps
+ "walking": 0,                  // movement time(min) 0~1440
+ "power": 67,                   // power 0~100
+ "working": 0,                  // movement time(min) 0~1440
+ "assist_mac":[                 // wifi auxiliary positioning data, 4 groups of mac. through the auxiliary positioning can get latitude and longitude                                     //https://developers.google.com/maps/documentation/geolocation/overview
+     {
+     "mac":"43:AE:82:F5:8A:FB",
+     "rssi":-1
+     },
+      {
+     "mac":"43:AE:82:F5:8A:FB",
+     "rssi":-1
+     },
+      {
+     "mac":"43:AE:82:F5:8A:FB",
+     "rssi":-1
+     },
+      {
+     "mac":"43:AE:82:F5:8A:FB",
+     "rssi":-1
+     }
+ ]         
+ "helium_report_interval":5,       // device report data interval 5~600 unit minutes
+ "last_position_time": 1652091432  // last position time UTC timestamp
 }
 ```
 
