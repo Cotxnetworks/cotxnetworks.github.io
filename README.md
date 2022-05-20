@@ -54,7 +54,7 @@ _join Responses_
  "sn": "SN9012PLPL06AF4C",      // 出厂SN
  "dev_eui": "1122334455667788", // DevEui
  "rssi":-18,                    // RSSI
- "timestamp": 1652091432 //UTC时间戳 
+ "timestamp": 1652091432        // UTC时间戳  单位秒
  }
 ```
 
@@ -74,7 +74,7 @@ _uplink Responses_
  "latitude": 0,        // 纬度 (double latitude * 1000000)
  "precious": 0,        // 定位精度  0~2047
  "star_num": 0,        // 定位卫星数  0~37
- "timestamp": 1652091432,// 定位时间 UTC时间戳
+ "timestamp": 1652091432,// 定位时间 UTC时间戳 单位秒
  "paws":11,              // 步数
  "walking": 0,           // 运动时间(min) 0~1440
  "power": 67,            // 电量 0~100 
@@ -99,7 +99,7 @@ _uplink Responses_
  ]         
  
  "helium_report_interval":5,       // 设备上报数据间隔5~600 单位分钟
- "last _position_time": 1652091432 // 上一次定位时间 UTC时间戳
+ "last_position_time": 1652091432 // 上一次定位时间 UTC时间戳 单位秒
 }
 ```
 
