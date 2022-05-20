@@ -50,10 +50,10 @@ Take the MQTT tool as an example
 _join Responses_
 ```json
 {
- "data_type":"join",
- "sn": "SN9012PLPL06AF4C",
- "dev_eui": "1122334455667788",
- "rssi":-18,
+ "data_type":"join",            // 数据类型 只有两种情况：join/uplink
+ "sn": "SN9012PLPL06AF4C",      // 出厂SN
+ "dev_eui": "1122334455667788", // DevEui
+ "rssi":-18,                    // RSSI
  "timestamp": 1652091432 //UTC时间戳 
  }
 ```
@@ -61,10 +61,10 @@ _join Responses_
 _uplink Responses_
 ```json
 {
- "data_type":"uplink",
- "sn": "SN9012PLPL06AF4C",
- "dev_eui": "1122334455667788",
- "rssi":-18,           // rssi -128~0
+ "data_type":"uplink",          // 数据类型 只有两种情况：join/uplink
+ "sn": "SN9012PLPL06AF4C",      // 出厂SN
+ "dev_eui": "1122334455667788", //DevEui
+ "rssi":-18,           // RSSI 
  "epo_status": 0,      // EPOstatus  0-invalid/overdue 1-available
  "position_mark": 2,   // 定位标记 0-无定位 1-设备 2-手机 3-wifi
  "upload_tag": 0,      // 上传状态 0-实时 1-补传
