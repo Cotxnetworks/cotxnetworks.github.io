@@ -37,7 +37,7 @@ _Responses_
 
 ```json
 {
-  "secret": "0e6d0590-4557-4c2a-b0ba-b10c645fd9e6"
+  "secret": "f0051e56-9c94-4d4d-8c22-e69cedcbcbdc"
 }
 ```
 
