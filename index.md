@@ -101,7 +101,7 @@ _uplink Responses_
      "mac":"43:AE:82:F5:8A:FB",
      "rssi":-1
      }
- ]         
+ ],        
  "helium_report_interval":5,       // device report data interval 5~600 unit minutes
  "last_position_time": 1652091432  // last position time UTC timestamp
 }
